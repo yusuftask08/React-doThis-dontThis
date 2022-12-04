@@ -1,0 +1,68 @@
+import React, { useState, useEffect } from 'react'
+import '../style.css'
+import axios from 'axios';
+
+const useFetchDontThis = () => {
+  const [loading, setLoading] = useState(true);
+  const [data1, setData1] = useState();
+  const [data2, setData2] = useState();
+  const [data3, setData3] = useState();
+  const [error, setError] = useState();
+
+  const url = 'https://catfact.ninja/fact'
+
+  useEffect(() => {
+    setLoading(true);
+    axios.get(url)
+      .then((res) => {   
+        setData1(res.data);
+        console.log('res.data1', res.data)
+      }
+      )
+      .catch((err) => setError(err))
+      .finally(() => setLoading(false))
+  }, [url])
+
+  useEffect(() => {
+    setLoading(true);
+    axios.get(url)
+      .then((res) => {
+        setData2(res.data);
+        console.log('res.data2', res.data)
+      }
+      )
+      .catch((err) => setError(err))
+      .finally(() => setLoading(false))
+  }, [url])
+
+  useEffect(() => {
+    setLoading(true);
+    axios.get(url)
+      .then((res) => {
+        setData3(res.data);
+        console.log('res.data3', res.data)
+      }
+      )
+      .catch((err) => setError(err))
+      .finally(() => setLoading(false))
+  }, [url])
+
+  return (
+    <div className='dont-this'>
+      <div className='title'>
+        <h1> UseFetch Dont This ❌</h1>
+      </div>
+      <span>Data1: </span>
+      <p>  {data1?.fact}</p>
+      <span>Data2: </span>
+      <br />
+      <p> {data2?.fact}</p>
+      <br />
+      <span>Data3: </span>
+      <p> {data3?.fact}</p>
+    </div>
+  )
+
+}
+
+export default useFetchDontThis

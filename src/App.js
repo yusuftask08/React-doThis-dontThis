@@ -1,23 +1,24 @@
-import logo from './logo.svg';
 import './App.css';
+import ReDontThis from './ReferentialEquality/ReDontThis';
+import ReDoThis from './ReferentialEquality/ReDoThis';
+import DontThisTimer from './Timer/DontThisTimer';
+import DoThisTimer from './Timer/DoThisTimer';
+import UseFetchDontThis from './UseFetch/UseFetchDontThis';
+import UseFetchDoThis from './UseFetch/UseFetchDoThis';
+import DontThis from './Usestate/DontThis';
+import DoThis from './Usestate/DoThis';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <DontThis />
+    {/* <DoThis/> */}
+    {/* <ReDontThis /> */}
+    {/* <ReDoThis /> */}
+    {/* <DontThisTimer /> */}
+    {/* <DoThisTimer /> */}
+    {/* <UseFetchDontThis /> */}
+    {/* <UseFetchDoThis /> */}
     </div>
   );
 }
